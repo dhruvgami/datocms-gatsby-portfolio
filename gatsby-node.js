@@ -16,12 +16,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then(result => {
-      result.data.allDatoCmsWork.edges.map(({ node: work }) => {
+      result.data.allDatoCmsWork.edges.map(({ node: festival }) => {
         createPage({
-          path: `works/${work.slug}`,
-          component: path.resolve(`./src/templates/work.js`),
+          path: `festivals/${festival.slug}`,
+          component: path.resolve(`./src/templates/festival.js`),
           context: {
-            slug: work.slug,
+            slug: festival.slug,
           },
         })
       })

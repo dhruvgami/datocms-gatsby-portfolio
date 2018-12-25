@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => (
       <div key={festival.id} className="showcase__item">
         <figure className="card">
           <Link to={`/festivals/${festival.slug}`} className="card__image">
-            <Img sizes={work.coverImage.sizes} />
+            <Img sizes={festival.coverImage.sizes} />
           </Link>
           <figcaption className="card__caption">
             <h6 className="card__title">
