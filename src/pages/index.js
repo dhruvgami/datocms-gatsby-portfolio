@@ -6,7 +6,7 @@ import Img from 'gatsby-image'
 
 const IndexPage = ({ data }) => (
   <Masonry className="showcase">
-    {data.allDatoCmsWork.edges.map(({ node: festival }) => (
+    {data.allDatoCmsFestival.edges.map(({ node: festival }) => (
       <div key={festival.id} className="showcase__item">
         <figure className="card">
           <Link to={`/festivals/${festival.slug}`} className="card__image">
@@ -30,7 +30,7 @@ export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
-    allDatoCmsWork(sort: { fields: [position], order: ASC }) {
+    allDatoCmsFestival(sort: { fields: [position], order: ASC }) {
       edges {
         node {
           id
