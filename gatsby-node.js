@@ -7,7 +7,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allDatoCmsWork {
+        allDatoCmsFestival {
           edges {
             node {
               slug
@@ -16,7 +16,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then(result => {
-      result.data.allDatoCmsWork.edges.map(({ node: festival }) => {
+      result.data.allDatoCmsFestival.edges.map(({ node: festival }) => {
         createPage({
           path: `festivals/${festival.slug}`,
           component: path.resolve(`./src/templates/festival.js`),
